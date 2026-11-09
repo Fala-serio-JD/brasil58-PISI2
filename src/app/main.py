@@ -11,7 +11,6 @@ ARQUIVO_ARESTAS = os.path.join(
 )
 
 
-# ---------------------------------------------------------------- leitura
 def lerDistancias(caminho, qtdeCidades=QTDE_CIDADES):
     """Lê a matriz triangular superior e devolve o dicionário (i, j) -> peso."""
     distancias = {}
@@ -27,8 +26,6 @@ def lerDistancias(caminho, qtdeCidades=QTDE_CIDADES):
                 distancias[(j, i)] = peso
     return distancias
 
-
-# ------------------------------------------------------- funções pedidas
 def custoCaminho(permutacao, dicDistancias):
     """Custo total do ciclo: soma pares consecutivos + retorno ao primeiro nó."""
     soma = 0
