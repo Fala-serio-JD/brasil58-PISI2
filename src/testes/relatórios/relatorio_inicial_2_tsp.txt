@@ -1,0 +1,54 @@
+==========================================================
+ RELATORIO DE TESTES - ALGORITMO GENETICO (BRAZIL58.TSP)
+ Alvo (Menor custo conhecido): 25395
+==========================================================
+
+RESULTADOS: Cenario 1 - Execucao Rapida
+  - Parametros: População=50, Inversão=0.1, Gerações=1000
+  - Melhor Custo: 26200 (Tempo: 1.71s)
+  - Pior Custo:   27400 (Tempo: 1.98s)
+  - Custo Medio:  26903
+  - Tempo Medio:  1.89s
+  - Gap para o Otimo: +3.17%
+----------------------------------------------------------
+
+RESULTADOS: Cenario 2 - Parametros Base
+  - Parametros: População=100, Inversão=0.3, Gerações=2000
+  - Melhor Custo: 26010 (Tempo: 7.06s)
+  - Pior Custo:   27416 (Tempo: 7.83s)
+  - Custo Medio:  26595
+  - Tempo Medio:  7.58s
+  - Gap para o Otimo: +2.42%
+----------------------------------------------------------
+
+RESULTADOS: Cenario 3 - Alta Mutacao
+  - Parametros: População=100, Inversão=0.8, Gerações=2000
+  - Melhor Custo: 26415 (Tempo: 11.92s)
+  - Pior Custo:   28379 (Tempo: 8.30s)
+  - Custo Medio:  27528
+  - Tempo Medio:  8.93s
+  - Gap para o Otimo: +4.02%
+----------------------------------------------------------
+
+RESULTADOS: Cenario 4 - Populacao Extensa
+  - Parametros: População=300, Inversão=0.3, Gerações=2000
+  - Melhor Custo: 26431 (Tempo: 27.26s)
+  - Pior Custo:   27381 (Tempo: 45.22s)
+  - Custo Medio:  27061
+  - Tempo Medio:  31.57s
+  - Gap para o Otimo: +4.08%
+----------------------------------------------------------
+
+===============================================================================================
+CENARIO                        | MELHOR  | PIOR    | MEDIA C. | T. MELHOR | T. PIOR  | T. MEDIA | GAP %
+-----------------------------------------------------------------------------------------------
+Cenario 1 - Execucao Rapida    | 26200   | 27400   | 26903    | 1.71    s | 1.98   s | 1.89   s | +3.17%
+Cenario 2 - Parametros Base    | 26010   | 27416   | 26595    | 7.06    s | 7.83   s | 7.58   s | +2.42%
+Cenario 3 - Alta Mutacao       | 26415   | 28379   | 27528    | 11.92   s | 8.30   s | 8.93   s | +4.02%
+Cenario 4 - Populacao Extensa  | 26431   | 27381   | 27061    | 27.26   s | 45.22  s | 31.57  s | +4.08%
+===============================================================================================
+
+SINTESE GERAL
+Melhor configuracao: Cenario 2 - Parametros Base
+Menor custo atingido: 26010 (Otimo global: 25395)
+

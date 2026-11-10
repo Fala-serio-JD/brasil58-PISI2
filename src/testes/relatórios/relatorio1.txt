@@ -1,0 +1,90 @@
+==========================================================
+ RELATORIO DE TESTES - ALGORITMO GENETICO (BRAZIL58.TSP)
+ Alvo (Menor custo conhecido): 25395
+ Repeticoes por cenario: 5
+==========================================================
+
+CENARIOS E PARAMETROS
+- Cenario 1 - Execucao Rapida: tamPop=50, probInversao=0.1, geracoes=1000, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 2 - Parametros Base: tamPop=100, probInversao=0.3, geracoes=2000, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 3 - Alta Mutacao: tamPop=100, probInversao=0.8, geracoes=2000, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 4 - Populacao Extensa: tamPop=300, probInversao=0.3, geracoes=2000, probCruzamento=0.9 (padrao), elite=2 (padrao)
+
+
+[Iniciando] Cenario 1 - Execucao Rapida...
+  -> Teste 1/5 | Custo: 27233 | Tempo: 3.31s
+  -> Teste 2/5 | Custo: 26718 | Tempo: 1.86s
+  -> Teste 3/5 | Custo: 27099 | Tempo: 2.00s
+  -> Teste 4/5 | Custo: 27288 | Tempo: 1.91s
+  -> Teste 5/5 | Custo: 27473 | Tempo: 1.81s
+
+RESULTADOS: Cenario 1 - Execucao Rapida
+  - Parametros: Populacao=50, Inversao=0.1, Geracoes=1000
+  - Melhor Custo: 26718 (Tempo: 1.86s)
+  - Pior Custo:   27473 (Tempo: 1.81s)
+  - Custo Medio:  27162
+  - Tempo Medio:  2.18s
+  - Gap para o Otimo: +5.21%
+----------------------------------------------------------
+
+[Iniciando] Cenario 2 - Parametros Base...
+  -> Teste 1/5 | Custo: 27469 | Tempo: 7.95s
+  -> Teste 2/5 | Custo: 25736 | Tempo: 7.49s
+  -> Teste 3/5 | Custo: 26617 | Tempo: 8.70s
+  -> Teste 4/5 | Custo: 26275 | Tempo: 7.61s
+  -> Teste 5/5 | Custo: 25643 | Tempo: 6.49s
+
+RESULTADOS: Cenario 2 - Parametros Base
+  - Parametros: Populacao=100, Inversao=0.3, Geracoes=2000
+  - Melhor Custo: 25643 (Tempo: 6.49s)
+  - Pior Custo:   27469 (Tempo: 7.95s)
+  - Custo Medio:  26348
+  - Tempo Medio:  7.65s
+  - Gap para o Otimo: +0.98%
+----------------------------------------------------------
+
+[Iniciando] Cenario 3 - Alta Mutacao...
+  -> Teste 1/5 | Custo: 28596 | Tempo: 7.65s
+  -> Teste 2/5 | Custo: 27623 | Tempo: 7.74s
+  -> Teste 3/5 | Custo: 27832 | Tempo: 7.94s
+  -> Teste 4/5 | Custo: 27510 | Tempo: 7.84s
+  -> Teste 5/5 | Custo: 28709 | Tempo: 7.93s
+
+RESULTADOS: Cenario 3 - Alta Mutacao
+  - Parametros: Populacao=100, Inversao=0.8, Geracoes=2000
+  - Melhor Custo: 27510 (Tempo: 7.84s)
+  - Pior Custo:   28709 (Tempo: 7.93s)
+  - Custo Medio:  28054
+  - Tempo Medio:  7.82s
+  - Gap para o Otimo: +8.33%
+----------------------------------------------------------
+
+[Iniciando] Cenario 4 - Populacao Extensa...
+  -> Teste 1/5 | Custo: 26056 | Tempo: 21.25s
+  -> Teste 2/5 | Custo: 27079 | Tempo: 24.37s
+  -> Teste 3/5 | Custo: 27595 | Tempo: 25.24s
+  -> Teste 4/5 | Custo: 27269 | Tempo: 27.68s
+  -> Teste 5/5 | Custo: 27014 | Tempo: 54.01s
+
+RESULTADOS: Cenario 4 - Populacao Extensa
+  - Parametros: Populacao=300, Inversao=0.3, Geracoes=2000
+  - Melhor Custo: 26056 (Tempo: 21.25s)
+  - Pior Custo:   27595 (Tempo: 25.24s)
+  - Custo Medio:  27003
+  - Tempo Medio:  30.51s
+  - Gap para o Otimo: +2.60%
+----------------------------------------------------------
+
+===============================================================================================
+CENARIO                        | MELHOR  | PIOR    | MEDIA C. | T. MELHOR | T. PIOR  | T. MEDIA | GAP %
+-----------------------------------------------------------------------------------------------
+Cenario 1 - Execucao Rapida    | 26718   | 27473   | 27162    | 1.86    s | 1.81   s | 2.18   s | +5.21%
+Cenario 2 - Parametros Base    | 25643   | 27469   | 26348    | 6.49    s | 7.95   s | 7.65   s | +0.98%
+Cenario 3 - Alta Mutacao       | 27510   | 28709   | 28054    | 7.84    s | 7.93   s | 7.82   s | +8.33%
+Cenario 4 - Populacao Extensa  | 26056   | 27595   | 27003    | 21.25   s | 25.24  s | 30.51  s | +2.60%
+===============================================================================================
+
+SINTESE GERAL
+Melhor configuracao: Cenario 2 - Parametros Base
+Menor custo atingido: 25643 (Otimo global: 25395)
+
