@@ -1,0 +1,4 @@
+==========================================================
+ RELATORIO DE TESTES - ALGORITMO GENETICO (BRAZIL58.TSP)
+ Alvo (Menor custo conhecido): 25395
+==========================================================
