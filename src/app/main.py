@@ -2,6 +2,8 @@ import os
 import random
 import time
 
+from deap import base, creator, tools, algorithms
+
 from INV import inv
 from OX import ox
 
@@ -9,7 +11,6 @@ QTDE_CIDADES = 58
 ARQUIVO_ARESTAS = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "docs", "edgesbrasil58.tsp"
 )
-
 
 def lerDistancias(caminho, qtdeCidades=QTDE_CIDADES):
     """Lê a matriz triangular superior e devolve o dicionário (i, j) -> peso."""
@@ -27,7 +28,7 @@ def lerDistancias(caminho, qtdeCidades=QTDE_CIDADES):
     return distancias
 
 def custoCaminho(permutacao, dicDistancias):
-    """Custo total do ciclo: soma pares consecutivos + retorno ao primeiro nó."""
+    """Custo total do ciclo: soma pares consecutivos e retorno ao primeiro nó."""
     soma = 0
     for i in range(len(permutacao) - 1):
         a = permutacao[i]
@@ -55,53 +56,102 @@ def calculaAptidao(populacao, dicDistancias):
     """Lista de custos na mesma ordem da população."""
     return [custoCaminho(individuo, dicDistancias) for individuo in populacao]
 
-def torneio(populacao, custos, k=3):
-    """Seleciona o melhor (menor custo) entre k indivíduos sorteados."""
-    candidatos = random.sample(range(len(populacao)), k)
-    melhor = min(candidatos, key=lambda idx: custos[idx])
-    return populacao[melhor]
+
+creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
+creator.create("Individuo", list, fitness=creator.FitnessMin)
 
 
-def algoritmoGenetico(dicDistancias, tamPop=100, geracoes=2000,
-                      probCruzamento=0.9, probInversao=0.3, elite=2,
+def cruzamentoOX(ind1, ind2):
+    """Adapta o OX do projeto ao DEAP (modifica os pais in-place)."""
+    filho1 = ox(list(ind1), list(ind2))
+    filho2 = ox(list(ind2), list(ind1))
+    ind1[:] = filho1
+    ind2[:] = filho2
+    return ind1, ind2
+
+
+def montaToolbox(dicDistancias, tamTorneio=3, tentativasInversao=20):
+    toolbox = base.Toolbox()
+
+    toolbox.register("populacao", lambda n: [
+        creator.Individuo(ind) for ind in inicializaPopulacao(n, QTDE_CIDADES)
+    ])
+
+    toolbox.register("evaluate", lambda ind: (custoCaminho(ind, dicDistancias),))
+
+    def mutacaoInversao(individuo):
+        """
+        Inversão com aceitação gulosa: sorteia trechos via inv() e só
+        mantém a inversão se o custo diminuir (equivale a um 2-opt
+        aleatório). Modifica o indivíduo in-place.
+        """
+        custo = custoCaminho(individuo, dicDistancias)
+        for _ in range(tentativasInversao):
+            candidato = inv(list(individuo))
+            novoCusto = custoCaminho(candidato, dicDistancias)
+            if novoCusto < custo:
+                individuo[:] = candidato
+                custo = novoCusto
+        return (individuo,)
+
+    toolbox.register("mate", cruzamentoOX)
+    toolbox.register("mutate", mutacaoInversao)
+    toolbox.register("select", tools.selTournament, tournsize=tamTorneio)
+    return toolbox
+
+
+def avalia(toolbox, individuos):
+    """Avalia somente quem ainda não tem aptidão válida."""
+    invalidos = [ind for ind in individuos if not ind.fitness.valid]
+    for ind, fit in zip(invalidos, map(toolbox.evaluate, invalidos)):
+        ind.fitness.values = fit
+
+
+def algoritmoGenetico(dicDistancias, tamPop=200, geracoes=600,
+                      probCruzamento=0.6, probInversao=0.4, elite=2,
                       semente=None, verboso=True):
+    """
+    Loop evolutivo com DEAP: varOr gera os filhos (cruzamento OX ou
+    mutação por INVERSÃO), com elitismo e seleção por torneio.
+    probCruzamento + probInversao <= 1.
+    """
     if semente is not None:
         random.seed(semente)
 
-    populacao = inicializaPopulacao(tamPop, QTDE_CIDADES)
-    custos = calculaAptidao(populacao, dicDistancias)
+    toolbox = montaToolbox(dicDistancias)
+    populacao = toolbox.populacao(tamPop)
+    avalia(toolbox, populacao)
 
-    melhorCusto = min(custos)
-    melhorRota = populacao[custos.index(melhorCusto)][:]
+    hof = tools.HallOfFame(1)
+    hof.update(populacao)
+    stats = tools.Statistics(lambda ind: ind.fitness.values[0])
+    stats.register("min", min)
+    stats.register("media", lambda v: sum(v) / len(v))
 
     for g in range(1, geracoes + 1):
-        ordem = sorted(range(tamPop), key=lambda idx: custos[idx])
-        novaPop = [populacao[idx][:] for idx in ordem[:elite]]
+        filhos = algorithms.varOr(populacao, toolbox, tamPop,
+                                  probCruzamento, probInversao)
+        avalia(toolbox, filhos)
 
-        while len(novaPop) < tamPop:
-            pai1 = torneio(populacao, custos)
-            pai2 = torneio(populacao, custos)
+        conjunto = list({tuple(ind): ind for ind in populacao + filhos}.values())
+        while len(conjunto) < tamPop:
+            novo = creator.Individuo(inicializaPopulacao(1, QTDE_CIDADES)[0])
+            novo.fitness.values = toolbox.evaluate(novo)
+            conjunto.append(novo)
+        novaPop = tools.selBest(conjunto, elite)
+        novaPop += toolbox.select(conjunto, tamPop - elite)
+        populacao = [creator.Individuo(ind) for ind in novaPop]
+        for novo, velho in zip(populacao, novaPop):
+            novo.fitness.values = velho.fitness.values
 
-            filho = ox(pai1, pai2) if random.random() < probCruzamento else pai1[:]
+        hof.update(populacao)
+        if verboso and (g == 1 or g % 50 == 0):
+            reg = stats.compile(populacao)
+            print(f"Geração {g:5d} | melhor: {hof[0].fitness.values[0]:.0f} | "
+                  f"média: {reg['media']:.0f}")
 
-            if random.random() < probInversao:
-                filho = inv(filho)
-
-            novaPop.append(filho)
-
-        populacao = novaPop
-        custos = calculaAptidao(populacao, dicDistancias)
-
-        custoGeracao = min(custos)
-        if custoGeracao < melhorCusto:
-            melhorCusto = custoGeracao
-            melhorRota = populacao[custos.index(custoGeracao)][:]
-
-        if verboso and (g % 100 == 0 or g == 1):
-            print(f"Geração {g:5d} | melhor: {melhorCusto} | "
-                  f"média: {sum(custos) / len(custos):.0f}")
-
-    return melhorRota, melhorCusto
+    melhor = hof[0]
+    return list(melhor), melhor.fitness.values[0]
 
 
 def main():
