@@ -1,0 +1,122 @@
+# 🧬 Algoritmo Genético: Caixeiro Viajante (brazil58.tsp)
+
+Este projeto consiste em uma solução estocástica baseada em **Algoritmo Genético (A.G.)** para resolver o Problema do Caixeiro Viajante (*Traveling Salesperson Problem - TSP*), utilizando o dataset oficial **`brazil58.tsp`** (58 cidades brasileiras).
+
+🏆 **STATUS DO PROJETO: ÓTIMO GLOBAL ALCANÇADO!** 🏆
+O objetivo principal de encontrar o ciclo hamiltoniano de menor custo computacional foi cumprido com excelência, **atingindo a melhor solução matemática conhecida de `25395` (0.00% de erro).**
+
+## 👥 Divisão de Responsabilidades e Créditos
+
+A arquitetura do projeto foi estruturada seguindo o princípio da **Responsabilidade Única** (*Clean Code*), onde cada módulo do sistema desempenha uma função bem definida:
+
+* 🏛️ **Arquitetura Geral do Sistema:** Daniel Erick e Jezreel David
+
+* 🔬 **Módulo de Automação de Testes e Análise:** Jezreel David
+
+* 🧠 **Algoritmo Genético e Operadores (OX / INV):** Lucas Gabriel
+
+* 📏 **Funções de Aptidão, Custo e Leitura de Dados:** Richard Carmo
+
+## 📁 Arquitetura do Repositório
+
+A estrutura de arquivos do projeto está organizada da seguinte forma:
+
+```text
+brasil58-PISI2/
+├── src/
+│   ├── app/                    # Núcleo da aplicação e Algoritmo Genético
+│   │   ├── aptidao.py          # Wrapper de aptidão compatível com DEAP/tuplas
+│   │   ├── custo.py            # Cálculo da distância total do ciclo (distância percorrida)
+│   │   ├── INV.py              # Operador de Mutação por Inversão de Trecho
+│   │   ├── OX.py               # Operador de Cruzamento de Ordem (Order Crossover)
+│   │   └── main.py             # Script principal e laço de evolução do A.G.
+│   │
+│   ├── docs/                   # Dados de entrada e leitores de instância
+│   │   ├── brazil58.tsp        # Arquivo TSP no padrão TSPLIB
+│   │   ├── edgesbrasil58.tsp   # Matriz triangular de distâncias
+│   │   └── lerBrasil58.py      # Parser para leitura e montagem da matriz de distâncias
+│   │
+│   └── testes/                 # Módulo de validação e benchmarking
+│       ├── relatórios/         # Saída automática dos relatórios gerados (.txt)
+│       ├── automação_teste.py  # Script de execução dos cenários de teste automatizados
+│       └── *.png               # Capturas e evidências das simulações
+│
+├── .gitignore                  # Arquivos ignorados pelo Git (__pycache__, logs temporários)
+├── LICENSE                     # Licença do projeto
+└── README.md                   # Documentação do projeto
+```
+
+## ⚙️ Detalhamento dos Módulos
+
+### 🛠️ 1. Módulo `src/app/` (Engenharia do A.G.)
+
+* **`main.py`**: Gerencia o ciclo de vida do algoritmo genético. Inicializa a população aleatória, coordena a seleção por torneio ($k=3$), aplica cruzamento e mutação, preserva a elite (`elite=2`) e encerra após a contagem de gerações definida.
+
+* **`OX.py` (*Order Crossover*)**: Operador especializado para problemas permutacionais. Seleciona duas posições aleatórias no Pai 1 para criar uma fatia preservada no filho e preenche as demais posições com a ordem relativa do Pai 2, evitando duplicidade de cidades.
+
+* **`INV.py` (*Inversion Mutation*)**: Realiza a mutação sorteando dois pontos na rota e invertendo a ordem do subintervalo. Mantém a validade da permutação enquanto introduz diversidade genética.
+
+* **`custo.py` & `aptidao.py`**: Avaliam o desempenho de cada rota. O custo soma todas as arestas consecutivas $(c_i, c_{i+1})$ e adiciona a aresta de retorno $(c_n, c_1)$.
+
+### 📄 2. Módulo `src/docs/` (Tratamento de Dados)
+
+* **`lerBrasil58.py`**: Lê a matriz de arestas em formato triangular superior (`edgesbrasil58.tsp`) e constrói um dicionário de adjacência bidirecional `(i, j) -> peso`, permitindo consultas de distância em tempo constante $\mathcal{O}(1)$.
+
+### 🧪 3. Módulo `src/testes/` (Automação e Análise)
+
+* **`automação_teste.py`**: Executa uma bateria de simulações configuradas em 4 cenários distintos.
+
+  * Utiliza a classe `SaidaDuplicada` para redirecionar o `stdout` simultaneamente para o terminal e para arquivos de relatório numerados sequencialmente (`relatorio1.txt`, `relatorio2.txt`, etc.).
+
+  * Executa a limpeza automática de diretórios `__pycache__` via `shutil.rmtree` ao final de cada bateria.
+
+## 📊 Análise dos Resultados e Benchmarks
+
+A automação de testes avaliou 4 cenários paramétricos com 5 repetições independentes cada. O destaque absoluto foi o atingimento do **ótimo global**:
+
+| Cenário | Tamanho Pop. | Taxa Inversão | Gerações | Melhor Custo | Custo Médio | Tempo Médio | Gap p/ Ótimo | 
+| ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | 
+| **Cenário 1 (Execução Rápida)** | 50 | 10% | 1000 | 25767 | 26792 | 2.07s | +1.46% | 
+| **Cenário 2 (Parâmetros Base)** | 100 | 30% | 2000 | 25475 | 26207 | 15.80s | +0.32% | 
+| **Cenário 3 (Alta Mutação)** | 100 | 80% | 2000 | 27297 | 28494 | 21.51s | +7.49% | 
+| **Cenário 4 (População Extensa)** | 300 | 30% | 2000 | **25395** | 26376 | 42.45s | **+0.00%** | 
+
+### 💡 Conclusões das Simulações:
+
+1. **Atingimento do Ótimo Global (O Grande Marco):** O **Cenário 4** (População de 300 indivíduos) obteve sucesso absoluto ao encontrar a rota exata de custo **`25395`**, reduzindo o erro a zero (Gap de 0.00%). Isso demonstra que o espaço de busca necessitava de uma vasta diversidade genética (alta população) para escapar dos ótimos locais profundos desse problema.
+2. **Eficiência do Cenário Base:** Mesmo com um terço da população do cenário vencedor, o **Cenário 2** obteve um resultado formidável (`25475`), com uma margem de erro microscópica de **+0.32%**, rodando quase três vezes mais rápido.
+3. **Impacto da Mutação Excessiva:** Como esperado teoricamente, o aumento da taxa de inversão para 80% (Cenário 3) degradou severamente a convergência do algoritmo (+7.49% de gap). A mutação elevada quebra *building blocks* importantes construídos pelo cruzamento (OX), tornando a busca demasiadamente aleatória.
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+
+* Python 3.8 ou superior.
+
+* Não são necessárias bibliotecas externas de terceiros (projeto desenvolvido com a biblioteca padrão).
+
+### Executando o Algoritmo Genético (Modo Individual)
+
+Para rodar uma simulação padrão do A.G.:
+
+```bash
+python src/app/main.py
+```
+
+### Executando a Bateria de Testes Automatizada
+
+Para rodar todos os cenários e gerar o relatório no diretório `src/testes/relatórios/`:
+
+```bash
+python src/testes/automação_teste.py
+```
+
+## 🧼 Boas Práticas Aplicadas
+
+* [x] **Modularidade Operacional:** Separação estrita entre lógica do A.G. (`app`), dados/parsers (`docs`) e validação (`testes`).
+
+* [x] **Reprodutibilidade:** Controle de sementes aleatórias e logs de parâmetros por execução.
+
+* [x] **Clean Up Automatizado:** Remoção de artefatos de compilação Python (`__pycache__`) pós-execução.
+
+* [x] **Relatórios Persistentes:** Gravação automática de estatísticas em arquivos de texto sem sobrescrever histórico prévio.
