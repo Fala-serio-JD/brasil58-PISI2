@@ -1,0 +1,332 @@
+==========================================================
+ RELATORIO DE TESTES - ALGORITMO GENETICO (FLYFOOD)
+ Otimo conhecido por instancia (1a VA): matriz1=14, matriz2=22, matriz3=26, matriz4=38, matriz5=50 (dronometros)
+ Repeticoes por cenario/instancia: 5
+==========================================================
+
+CENARIOS E PARAMETROS
+- Cenario 1 - Execucao Rapida: tamPop=20, probInversao=0.1, geracoes=50, elite=2 (padrao), torneio=3 (padrao)
+- Cenario 2 - Parametros Base: tamPop=50, probInversao=0.3, geracoes=200, elite=2 (padrao), torneio=3 (padrao)
+- Cenario 3 - Alta Mutacao: tamPop=50, probInversao=0.8, geracoes=200, elite=2 (padrao), torneio=3 (padrao)
+- Cenario 4 - Populacao Extensa: tamPop=200, probInversao=0.3, geracoes=200, elite=2 (padrao), torneio=3 (padrao)
+
+
+[Iniciando] Cenario 1 - Execucao Rapida...
+  -> matriz1 (4 pontos) | Teste 1/5 | Custo: 14 | Geracao do recorde: 2 | Tempo: 0.0152s
+  -> matriz1 (4 pontos) | Teste 2/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.0208s
+  -> matriz1 (4 pontos) | Teste 3/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.0205s
+  -> matriz1 (4 pontos) | Teste 4/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.0198s
+  -> matriz1 (4 pontos) | Teste 5/5 | Custo: 14 | Geracao do recorde: 2 | Tempo: 0.0180s
+
+RESULTADOS Cenario 1 - Execucao Rapida - matriz1
+  - Otimo conhecido: 14 dronometros
+  - Melhor Custo: 14 | Pior Custo: 14 | Custo Medio: 14.0
+  - Melhor rota: R -> B -> C -> D -> A -> R
+  - Geracao media do recorde: 1
+  - Tempo Medio: 0.0188s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz2 (6 pontos) | Teste 1/5 | Custo: 22 | Geracao do recorde: 3 | Tempo: 0.0214s
+  -> matriz2 (6 pontos) | Teste 2/5 | Custo: 22 | Geracao do recorde: 6 | Tempo: 0.0210s
+  -> matriz2 (6 pontos) | Teste 3/5 | Custo: 22 | Geracao do recorde: 6 | Tempo: 0.0214s
+  -> matriz2 (6 pontos) | Teste 4/5 | Custo: 22 | Geracao do recorde: 1 | Tempo: 0.0175s
+  -> matriz2 (6 pontos) | Teste 5/5 | Custo: 22 | Geracao do recorde: 9 | Tempo: 0.0176s
+
+RESULTADOS Cenario 1 - Execucao Rapida - matriz2
+  - Otimo conhecido: 22 dronometros
+  - Melhor Custo: 22 | Pior Custo: 22 | Custo Medio: 22.0
+  - Melhor rota: R -> E -> J -> H -> G -> F -> I -> R
+  - Geracao media do recorde: 5
+  - Tempo Medio: 0.0198s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz3 (8 pontos) | Teste 1/5 | Custo: 26 | Geracao do recorde: 19 | Tempo: 0.0201s
+  -> matriz3 (8 pontos) | Teste 2/5 | Custo: 26 | Geracao do recorde: 15 | Tempo: 0.0192s
+  -> matriz3 (8 pontos) | Teste 3/5 | Custo: 30 | Geracao do recorde: 2 | Tempo: 0.0243s
+  -> matriz3 (8 pontos) | Teste 4/5 | Custo: 26 | Geracao do recorde: 25 | Tempo: 0.0215s
+  -> matriz3 (8 pontos) | Teste 5/5 | Custo: 26 | Geracao do recorde: 11 | Tempo: 0.0228s
+
+RESULTADOS Cenario 1 - Execucao Rapida - matriz3
+  - Otimo conhecido: 26 dronometros
+  - Melhor Custo: 26 | Pior Custo: 30 | Custo Medio: 26.8
+  - Melhor rota: R -> T -> N -> Q -> S -> P -> K -> O -> M -> R
+  - Geracao media do recorde: 14
+  - Tempo Medio: 0.0216s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +3.08%
+----------------------------------------------------------
+  -> matriz4 (10 pontos) | Teste 1/5 | Custo: 42 | Geracao do recorde: 19 | Tempo: 0.0228s
+  -> matriz4 (10 pontos) | Teste 2/5 | Custo: 38 | Geracao do recorde: 15 | Tempo: 0.0233s
+  -> matriz4 (10 pontos) | Teste 3/5 | Custo: 38 | Geracao do recorde: 20 | Tempo: 0.0246s
+  -> matriz4 (10 pontos) | Teste 4/5 | Custo: 38 | Geracao do recorde: 14 | Tempo: 0.0252s
+  -> matriz4 (10 pontos) | Teste 5/5 | Custo: 40 | Geracao do recorde: 9 | Tempo: 0.0247s
+
+RESULTADOS Cenario 1 - Execucao Rapida - matriz4
+  - Otimo conhecido: 38 dronometros
+  - Melhor Custo: 38 | Pior Custo: 42 | Custo Medio: 39.2
+  - Melhor rota: R -> F -> H -> D -> A -> B -> I -> E -> J -> C -> G -> R
+  - Geracao media do recorde: 15
+  - Tempo Medio: 0.0241s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +3.16%
+----------------------------------------------------------
+  -> matriz5 (12 pontos) | Teste 1/5 | Custo: 58 | Geracao do recorde: 6 | Tempo: 0.0234s
+  -> matriz5 (12 pontos) | Teste 2/5 | Custo: 54 | Geracao do recorde: 42 | Tempo: 0.0240s
+  -> matriz5 (12 pontos) | Teste 3/5 | Custo: 52 | Geracao do recorde: 50 | Tempo: 0.0216s
+  -> matriz5 (12 pontos) | Teste 4/5 | Custo: 52 | Geracao do recorde: 9 | Tempo: 0.0243s
+  -> matriz5 (12 pontos) | Teste 5/5 | Custo: 50 | Geracao do recorde: 41 | Tempo: 0.0215s
+
+RESULTADOS Cenario 1 - Execucao Rapida - matriz5
+  - Otimo conhecido: 50 dronometros
+  - Melhor Custo: 50 | Pior Custo: 58 | Custo Medio: 53.2
+  - Melhor rota: R -> K -> G -> A -> E -> C -> F -> J -> D -> L -> I -> B -> H -> R
+  - Geracao media do recorde: 30
+  - Tempo Medio: 0.0229s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +6.40%
+----------------------------------------------------------
+
+[Iniciando] Cenario 2 - Parametros Base...
+  -> matriz1 (4 pontos) | Teste 1/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2018s
+  -> matriz1 (4 pontos) | Teste 2/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2100s
+  -> matriz1 (4 pontos) | Teste 3/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2073s
+  -> matriz1 (4 pontos) | Teste 4/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2086s
+  -> matriz1 (4 pontos) | Teste 5/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.1934s
+
+RESULTADOS Cenario 2 - Parametros Base - matriz1
+  - Otimo conhecido: 14 dronometros
+  - Melhor Custo: 14 | Pior Custo: 14 | Custo Medio: 14.0
+  - Melhor rota: R -> A -> D -> C -> B -> R
+  - Geracao media do recorde: 1
+  - Tempo Medio: 0.2042s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz2 (6 pontos) | Teste 1/5 | Custo: 22 | Geracao do recorde: 3 | Tempo: 0.2132s
+  -> matriz2 (6 pontos) | Teste 2/5 | Custo: 22 | Geracao do recorde: 3 | Tempo: 0.2051s
+  -> matriz2 (6 pontos) | Teste 3/5 | Custo: 22 | Geracao do recorde: 1 | Tempo: 0.2096s
+  -> matriz2 (6 pontos) | Teste 4/5 | Custo: 22 | Geracao do recorde: 3 | Tempo: 0.2144s
+  -> matriz2 (6 pontos) | Teste 5/5 | Custo: 22 | Geracao do recorde: 3 | Tempo: 0.2054s
+
+RESULTADOS Cenario 2 - Parametros Base - matriz2
+  - Otimo conhecido: 22 dronometros
+  - Melhor Custo: 22 | Pior Custo: 22 | Custo Medio: 22.0
+  - Melhor rota: R -> I -> F -> G -> H -> J -> E -> R
+  - Geracao media do recorde: 3
+  - Tempo Medio: 0.2096s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz3 (8 pontos) | Teste 1/5 | Custo: 26 | Geracao do recorde: 12 | Tempo: 0.2299s
+  -> matriz3 (8 pontos) | Teste 2/5 | Custo: 26 | Geracao do recorde: 7 | Tempo: 0.2355s
+  -> matriz3 (8 pontos) | Teste 3/5 | Custo: 26 | Geracao do recorde: 8 | Tempo: 0.2489s
+  -> matriz3 (8 pontos) | Teste 4/5 | Custo: 26 | Geracao do recorde: 5 | Tempo: 0.2454s
+  -> matriz3 (8 pontos) | Teste 5/5 | Custo: 26 | Geracao do recorde: 7 | Tempo: 0.2426s
+
+RESULTADOS Cenario 2 - Parametros Base - matriz3
+  - Otimo conhecido: 26 dronometros
+  - Melhor Custo: 26 | Pior Custo: 26 | Custo Medio: 26.0
+  - Melhor rota: R -> T -> N -> Q -> S -> P -> K -> M -> O -> R
+  - Geracao media do recorde: 8
+  - Tempo Medio: 0.2405s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz4 (10 pontos) | Teste 1/5 | Custo: 38 | Geracao do recorde: 9 | Tempo: 0.2463s
+  -> matriz4 (10 pontos) | Teste 2/5 | Custo: 38 | Geracao do recorde: 9 | Tempo: 0.2210s
+  -> matriz4 (10 pontos) | Teste 3/5 | Custo: 38 | Geracao do recorde: 8 | Tempo: 0.2639s
+  -> matriz4 (10 pontos) | Teste 4/5 | Custo: 38 | Geracao do recorde: 13 | Tempo: 0.3092s
+  -> matriz4 (10 pontos) | Teste 5/5 | Custo: 38 | Geracao do recorde: 23 | Tempo: 0.2481s
+
+RESULTADOS Cenario 2 - Parametros Base - matriz4
+  - Otimo conhecido: 38 dronometros
+  - Melhor Custo: 38 | Pior Custo: 38 | Custo Medio: 38.0
+  - Melhor rota: R -> F -> H -> D -> A -> I -> B -> J -> E -> C -> G -> R
+  - Geracao media do recorde: 12
+  - Tempo Medio: 0.2577s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz5 (12 pontos) | Teste 1/5 | Custo: 50 | Geracao do recorde: 20 | Tempo: 0.2550s
+  -> matriz5 (12 pontos) | Teste 2/5 | Custo: 50 | Geracao do recorde: 63 | Tempo: 0.2475s
+  -> matriz5 (12 pontos) | Teste 3/5 | Custo: 50 | Geracao do recorde: 20 | Tempo: 0.2467s
+  -> matriz5 (12 pontos) | Teste 4/5 | Custo: 50 | Geracao do recorde: 46 | Tempo: 0.2709s
+  -> matriz5 (12 pontos) | Teste 5/5 | Custo: 50 | Geracao do recorde: 22 | Tempo: 0.2587s
+
+RESULTADOS Cenario 2 - Parametros Base - matriz5
+  - Otimo conhecido: 50 dronometros
+  - Melhor Custo: 50 | Pior Custo: 50 | Custo Medio: 50.0
+  - Melhor rota: R -> F -> C -> J -> D -> L -> H -> B -> I -> G -> A -> E -> K -> R
+  - Geracao media do recorde: 34
+  - Tempo Medio: 0.2558s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+
+[Iniciando] Cenario 3 - Alta Mutacao...
+  -> matriz1 (4 pontos) | Teste 1/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2417s
+  -> matriz1 (4 pontos) | Teste 2/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2408s
+  -> matriz1 (4 pontos) | Teste 3/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2166s
+  -> matriz1 (4 pontos) | Teste 4/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2311s
+  -> matriz1 (4 pontos) | Teste 5/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.2288s
+
+RESULTADOS Cenario 3 - Alta Mutacao - matriz1
+  - Otimo conhecido: 14 dronometros
+  - Melhor Custo: 14 | Pior Custo: 14 | Custo Medio: 14.0
+  - Melhor rota: R -> B -> C -> D -> A -> R
+  - Geracao media do recorde: 1
+  - Tempo Medio: 0.2318s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz2 (6 pontos) | Teste 1/5 | Custo: 22 | Geracao do recorde: 2 | Tempo: 0.2299s
+  -> matriz2 (6 pontos) | Teste 2/5 | Custo: 22 | Geracao do recorde: 4 | Tempo: 0.2290s
+  -> matriz2 (6 pontos) | Teste 3/5 | Custo: 22 | Geracao do recorde: 5 | Tempo: 0.2234s
+  -> matriz2 (6 pontos) | Teste 4/5 | Custo: 22 | Geracao do recorde: 2 | Tempo: 0.2480s
+  -> matriz2 (6 pontos) | Teste 5/5 | Custo: 22 | Geracao do recorde: 4 | Tempo: 0.2260s
+
+RESULTADOS Cenario 3 - Alta Mutacao - matriz2
+  - Otimo conhecido: 22 dronometros
+  - Melhor Custo: 22 | Pior Custo: 22 | Custo Medio: 22.0
+  - Melhor rota: R -> I -> F -> G -> H -> J -> E -> R
+  - Geracao media do recorde: 3
+  - Tempo Medio: 0.2313s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz3 (8 pontos) | Teste 1/5 | Custo: 26 | Geracao do recorde: 13 | Tempo: 0.2576s
+  -> matriz3 (8 pontos) | Teste 2/5 | Custo: 26 | Geracao do recorde: 13 | Tempo: 0.2602s
+  -> matriz3 (8 pontos) | Teste 3/5 | Custo: 26 | Geracao do recorde: 6 | Tempo: 0.2708s
+  -> matriz3 (8 pontos) | Teste 4/5 | Custo: 26 | Geracao do recorde: 13 | Tempo: 0.2544s
+  -> matriz3 (8 pontos) | Teste 5/5 | Custo: 26 | Geracao do recorde: 9 | Tempo: 0.2464s
+
+RESULTADOS Cenario 3 - Alta Mutacao - matriz3
+  - Otimo conhecido: 26 dronometros
+  - Melhor Custo: 26 | Pior Custo: 26 | Custo Medio: 26.0
+  - Melhor rota: R -> T -> N -> Q -> S -> P -> K -> O -> M -> R
+  - Geracao media do recorde: 11
+  - Tempo Medio: 0.2579s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz4 (10 pontos) | Teste 1/5 | Custo: 38 | Geracao do recorde: 14 | Tempo: 0.2671s
+  -> matriz4 (10 pontos) | Teste 2/5 | Custo: 38 | Geracao do recorde: 29 | Tempo: 0.2662s
+  -> matriz4 (10 pontos) | Teste 3/5 | Custo: 38 | Geracao do recorde: 11 | Tempo: 0.2718s
+  -> matriz4 (10 pontos) | Teste 4/5 | Custo: 38 | Geracao do recorde: 23 | Tempo: 0.2786s
+  -> matriz4 (10 pontos) | Teste 5/5 | Custo: 38 | Geracao do recorde: 15 | Tempo: 0.2825s
+
+RESULTADOS Cenario 3 - Alta Mutacao - matriz4
+  - Otimo conhecido: 38 dronometros
+  - Melhor Custo: 38 | Pior Custo: 38 | Custo Medio: 38.0
+  - Melhor rota: R -> G -> C -> E -> J -> B -> I -> A -> D -> H -> F -> R
+  - Geracao media do recorde: 18
+  - Tempo Medio: 0.2733s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz5 (12 pontos) | Teste 1/5 | Custo: 50 | Geracao do recorde: 42 | Tempo: 0.2834s
+  -> matriz5 (12 pontos) | Teste 2/5 | Custo: 52 | Geracao do recorde: 36 | Tempo: 0.2936s
+  -> matriz5 (12 pontos) | Teste 3/5 | Custo: 50 | Geracao do recorde: 91 | Tempo: 0.2999s
+  -> matriz5 (12 pontos) | Teste 4/5 | Custo: 50 | Geracao do recorde: 120 | Tempo: 0.2892s
+  -> matriz5 (12 pontos) | Teste 5/5 | Custo: 50 | Geracao do recorde: 64 | Tempo: 0.2877s
+
+RESULTADOS Cenario 3 - Alta Mutacao - matriz5
+  - Otimo conhecido: 50 dronometros
+  - Melhor Custo: 50 | Pior Custo: 52 | Custo Medio: 50.4
+  - Melhor rota: R -> H -> B -> I -> L -> D -> J -> C -> E -> A -> G -> K -> F -> R
+  - Geracao media do recorde: 71
+  - Tempo Medio: 0.2908s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.80%
+----------------------------------------------------------
+
+[Iniciando] Cenario 4 - Populacao Extensa...
+  -> matriz1 (4 pontos) | Teste 1/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.8867s
+  -> matriz1 (4 pontos) | Teste 2/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.9116s
+  -> matriz1 (4 pontos) | Teste 3/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.9172s
+  -> matriz1 (4 pontos) | Teste 4/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.9089s
+  -> matriz1 (4 pontos) | Teste 5/5 | Custo: 14 | Geracao do recorde: 1 | Tempo: 0.9026s
+
+RESULTADOS Cenario 4 - Populacao Extensa - matriz1
+  - Otimo conhecido: 14 dronometros
+  - Melhor Custo: 14 | Pior Custo: 14 | Custo Medio: 14.0
+  - Melhor rota: R -> A -> D -> C -> B -> R
+  - Geracao media do recorde: 1
+  - Tempo Medio: 0.9054s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz2 (6 pontos) | Teste 1/5 | Custo: 22 | Geracao do recorde: 2 | Tempo: 0.9587s
+  -> matriz2 (6 pontos) | Teste 2/5 | Custo: 22 | Geracao do recorde: 4 | Tempo: 0.9410s
+  -> matriz2 (6 pontos) | Teste 3/5 | Custo: 22 | Geracao do recorde: 1 | Tempo: 0.9577s
+  -> matriz2 (6 pontos) | Teste 4/5 | Custo: 22 | Geracao do recorde: 1 | Tempo: 0.9665s
+  -> matriz2 (6 pontos) | Teste 5/5 | Custo: 22 | Geracao do recorde: 4 | Tempo: 0.9376s
+
+RESULTADOS Cenario 4 - Populacao Extensa - matriz2
+  - Otimo conhecido: 22 dronometros
+  - Melhor Custo: 22 | Pior Custo: 22 | Custo Medio: 22.0
+  - Melhor rota: R -> I -> F -> G -> H -> J -> E -> R
+  - Geracao media do recorde: 2
+  - Tempo Medio: 0.9523s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz3 (8 pontos) | Teste 1/5 | Custo: 26 | Geracao do recorde: 3 | Tempo: 1.0616s
+  -> matriz3 (8 pontos) | Teste 2/5 | Custo: 26 | Geracao do recorde: 6 | Tempo: 1.0088s
+  -> matriz3 (8 pontos) | Teste 3/5 | Custo: 26 | Geracao do recorde: 8 | Tempo: 1.0423s
+  -> matriz3 (8 pontos) | Teste 4/5 | Custo: 26 | Geracao do recorde: 5 | Tempo: 1.0266s
+  -> matriz3 (8 pontos) | Teste 5/5 | Custo: 26 | Geracao do recorde: 5 | Tempo: 0.9682s
+
+RESULTADOS Cenario 4 - Populacao Extensa - matriz3
+  - Otimo conhecido: 26 dronometros
+  - Melhor Custo: 26 | Pior Custo: 26 | Custo Medio: 26.0
+  - Melhor rota: R -> O -> M -> K -> P -> S -> Q -> N -> T -> R
+  - Geracao media do recorde: 5
+  - Tempo Medio: 1.0215s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz4 (10 pontos) | Teste 1/5 | Custo: 38 | Geracao do recorde: 15 | Tempo: 1.0493s
+  -> matriz4 (10 pontos) | Teste 2/5 | Custo: 38 | Geracao do recorde: 11 | Tempo: 1.0959s
+  -> matriz4 (10 pontos) | Teste 3/5 | Custo: 38 | Geracao do recorde: 14 | Tempo: 1.1030s
+  -> matriz4 (10 pontos) | Teste 4/5 | Custo: 38 | Geracao do recorde: 8 | Tempo: 1.1113s
+  -> matriz4 (10 pontos) | Teste 5/5 | Custo: 38 | Geracao do recorde: 12 | Tempo: 1.0438s
+
+RESULTADOS Cenario 4 - Populacao Extensa - matriz4
+  - Otimo conhecido: 38 dronometros
+  - Melhor Custo: 38 | Pior Custo: 38 | Custo Medio: 38.0
+  - Melhor rota: R -> G -> C -> F -> B -> J -> E -> I -> A -> D -> H -> R
+  - Geracao media do recorde: 12
+  - Tempo Medio: 1.0806s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+  -> matriz5 (12 pontos) | Teste 1/5 | Custo: 50 | Geracao do recorde: 24 | Tempo: 1.1018s
+  -> matriz5 (12 pontos) | Teste 2/5 | Custo: 50 | Geracao do recorde: 35 | Tempo: 1.0934s
+  -> matriz5 (12 pontos) | Teste 3/5 | Custo: 50 | Geracao do recorde: 18 | Tempo: 1.0889s
+  -> matriz5 (12 pontos) | Teste 4/5 | Custo: 50 | Geracao do recorde: 34 | Tempo: 1.1047s
+  -> matriz5 (12 pontos) | Teste 5/5 | Custo: 50 | Geracao do recorde: 17 | Tempo: 1.0922s
+
+RESULTADOS Cenario 4 - Populacao Extensa - matriz5
+  - Otimo conhecido: 50 dronometros
+  - Melhor Custo: 50 | Pior Custo: 50 | Custo Medio: 50.0
+  - Melhor rota: R -> H -> B -> I -> K -> G -> A -> E -> C -> J -> D -> L -> F -> R
+  - Geracao media do recorde: 26
+  - Tempo Medio: 1.0962s
+  - Gap do melhor p/ otimo: +0.00% | gap medio: +0.00%
+----------------------------------------------------------
+
+====================================================================================================
+CENARIO                        | MATRIZ1 | MATRIZ2 | MATRIZ3 | MATRIZ4 | MATRIZ5 | ACERTOS | T.MEDIO
+----------------------------------------------------------------------------------------------------
+Cenario 1 - Execucao Rapida    |  +0.00% |  +0.00% |  +3.08% |  +3.16% |  +6.40% |   18/25 |  0.021s
+Cenario 2 - Parametros Base    |  +0.00% |  +0.00% |  +0.00% |  +0.00% |  +0.00% |   25/25 |  0.234s
+Cenario 3 - Alta Mutacao       |  +0.00% |  +0.00% |  +0.00% |  +0.00% |  +0.80% |   24/25 |  0.257s
+Cenario 4 - Populacao Extensa  |  +0.00% |  +0.00% |  +0.00% |  +0.00% |  +0.00% |   25/25 |  1.011s
+====================================================================================================
+
+
+SINTESE GERAL
+Melhor configuracao: Cenario 2 - Parametros Base (menor gap medio somado;
+empate resolvido pelo menor tempo medio)
+Execucoes no otimo nesta configuracao: 25/25
+Tempo medio por execucao: 0.2335s
+Custos otimos encontrados (1a VA -> A.G.):
+
+  - matriz1: 14 -> 14 dronometros | R -> A -> D -> C -> B -> R
+  - matriz2: 22 -> 22 dronometros | R -> I -> F -> G -> H -> J -> E -> R
+  - matriz3: 26 -> 26 dronometros | R -> T -> N -> Q -> S -> P -> K -> M -> O -> R
+  - matriz4: 38 -> 38 dronometros | R -> F -> H -> D -> A -> I -> B -> J -> E -> C -> G -> R
+  - matriz5: 50 -> 50 dronometros | R -> F -> C -> J -> D -> L -> H -> B -> I -> G -> A -> E -> K -> R
+
+Observacoes metodologicas:
+  - O A.G. e estocastico: custos variam entre repeticoes; o gap
+    do bloco de resultados considera o MELHOR custo obtido, e a
+    tabela geral considera o gap MEDIO das repeticoes.
+  - Circuitos otimos equivalentes (girados ou invertidos) tem o
+    mesmo custo; a rota exibida pode diferir da 1a VA por isso.
+  - Conversao das matrizes feita uma unica vez fora do cronometro
+    (mesmo criterio do carregamento das distancias no brasil58).
