@@ -1,0 +1,90 @@
+==========================================================
+ RELATORIO DE TESTES - ALGORITMO GENETICO (BRAZIL58.TSP)
+ Alvo (Menor custo conhecido): 25395
+ Repeticoes por cenario: 5
+==========================================================
+
+CENARIOS E PARAMETROS
+- Cenario 1 - Execucao Rapida: tamPop=50, probInversao=0.1, geracoes=400, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 2 - Parametros Base: tamPop=100, probInversao=0.3, geracoes=500, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 3 - Alta Mutacao: tamPop=100, probInversao=0.8, geracoes=500, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 4 - Populacao Extensa: tamPop=300, probInversao=0.3, geracoes=500, probCruzamento=0.9 (padrao), elite=2 (padrao)
+
+
+[Iniciando] Cenario 1 - Execucao Rapida...
+  -> Teste 1/5 | Custo: 30159 | Tempo: 1.21s
+  -> Teste 2/5 | Custo: 30742 | Tempo: 2.04s
+  -> Teste 3/5 | Custo: 28279 | Tempo: 1.11s
+  -> Teste 4/5 | Custo: 29108 | Tempo: 1.19s
+  -> Teste 5/5 | Custo: 29615 | Tempo: 1.02s
+
+RESULTADOS: Cenario 1 - Execucao Rapida
+  - Parametros: Populacao=50, Inversao=0.1, Geracoes=400
+  - Melhor Custo: 28279 (Tempo: 1.11s)
+  - Pior Custo:   30742 (Tempo: 2.04s)
+  - Custo Medio:  29581
+  - Tempo Medio:  1.32s
+  - Gap para o Otimo: +11.36%
+----------------------------------------------------------
+
+[Iniciando] Cenario 2 - Parametros Base...
+  -> Teste 1/5 | Custo: 26516 | Tempo: 2.00s
+  -> Teste 2/5 | Custo: 27712 | Tempo: 2.91s
+  -> Teste 3/5 | Custo: 25677 | Tempo: 5.61s
+  -> Teste 4/5 | Custo: 27189 | Tempo: 5.40s
+  -> Teste 5/5 | Custo: 26377 | Tempo: 5.33s
+
+RESULTADOS: Cenario 2 - Parametros Base
+  - Parametros: Populacao=100, Inversao=0.3, Geracoes=500
+  - Melhor Custo: 25677 (Tempo: 5.61s)
+  - Pior Custo:   27712 (Tempo: 2.91s)
+  - Custo Medio:  26694
+  - Tempo Medio:  4.25s
+  - Gap para o Otimo: +1.11%
+----------------------------------------------------------
+
+[Iniciando] Cenario 3 - Alta Mutacao...
+  -> Teste 1/5 | Custo: 35501 | Tempo: 6.18s
+  -> Teste 2/5 | Custo: 34911 | Tempo: 6.14s
+  -> Teste 3/5 | Custo: 32383 | Tempo: 6.41s
+  -> Teste 4/5 | Custo: 33600 | Tempo: 6.18s
+  -> Teste 5/5 | Custo: 35274 | Tempo: 5.71s
+
+RESULTADOS: Cenario 3 - Alta Mutacao
+  - Parametros: Populacao=100, Inversao=0.8, Geracoes=500
+  - Melhor Custo: 32383 (Tempo: 6.41s)
+  - Pior Custo:   35501 (Tempo: 6.18s)
+  - Custo Medio:  34334
+  - Tempo Medio:  6.13s
+  - Gap para o Otimo: +27.52%
+----------------------------------------------------------
+
+[Iniciando] Cenario 4 - Populacao Extensa...
+  -> Teste 1/5 | Custo: 30437 | Tempo: 7.23s
+  -> Teste 2/5 | Custo: 29202 | Tempo: 9.86s
+  -> Teste 3/5 | Custo: 29430 | Tempo: 15.11s
+  -> Teste 4/5 | Custo: 31286 | Tempo: 7.90s
+  -> Teste 5/5 | Custo: 29560 | Tempo: 6.22s
+
+RESULTADOS: Cenario 4 - Populacao Extensa
+  - Parametros: Populacao=300, Inversao=0.3, Geracoes=500
+  - Melhor Custo: 29202 (Tempo: 9.86s)
+  - Pior Custo:   31286 (Tempo: 7.90s)
+  - Custo Medio:  29983
+  - Tempo Medio:  9.27s
+  - Gap para o Otimo: +14.99%
+----------------------------------------------------------
+
+===============================================================================================
+CENARIO                        | MELHOR  | PIOR    | MEDIA C. | T. MELHOR | T. PIOR  | T. MEDIA | GAP %
+-----------------------------------------------------------------------------------------------
+Cenario 1 - Execucao Rapida    | 28279   | 30742   | 29581    | 1.11    s | 2.04   s | 1.32   s | +11.36%
+Cenario 2 - Parametros Base    | 25677   | 27712   | 26694    | 5.61    s | 2.91   s | 4.25   s | +1.11%
+Cenario 3 - Alta Mutacao       | 32383   | 35501   | 34334    | 6.41    s | 6.18   s | 6.13   s | +27.52%
+Cenario 4 - Populacao Extensa  | 29202   | 31286   | 29983    | 9.86    s | 7.90   s | 9.27   s | +14.99%
+===============================================================================================
+
+SINTESE GERAL
+Melhor configuracao: Cenario 2 - Parametros Base
+Menor custo atingido: 25677 (Otimo global: 25395)
+

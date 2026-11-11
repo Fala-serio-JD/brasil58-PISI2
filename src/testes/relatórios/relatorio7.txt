@@ -1,0 +1,90 @@
+==========================================================
+ RELATORIO DE TESTES - ALGORITMO GENETICO (BRAZIL58.TSP)
+ Alvo (Menor custo conhecido): 25395
+ Repeticoes por cenario: 5
+==========================================================
+
+CENARIOS E PARAMETROS
+- Cenario 1 - Execucao Rapida: tamPop=50, probInversao=0.1, geracoes=200, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 2 - Parametros Base: tamPop=100, probInversao=0.3, geracoes=300, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 3 - Alta Mutacao: tamPop=100, probInversao=0.8, geracoes=300, probCruzamento=0.9 (padrao), elite=2 (padrao)
+- Cenario 4 - Populacao Extensa: tamPop=300, probInversao=0.3, geracoes=300, probCruzamento=0.9 (padrao), elite=2 (padrao)
+
+
+[Iniciando] Cenario 1 - Execucao Rapida...
+  -> Teste 1/5 | Custo: 35047 | Tempo: 0.56s
+  -> Teste 2/5 | Custo: 36674 | Tempo: 0.75s
+  -> Teste 3/5 | Custo: 33463 | Tempo: 0.78s
+  -> Teste 4/5 | Custo: 32555 | Tempo: 0.92s
+  -> Teste 5/5 | Custo: 34827 | Tempo: 0.66s
+
+RESULTADOS: Cenario 1 - Execucao Rapida
+  - Parametros: Populacao=50, Inversao=0.1, Geracoes=200
+  - Melhor Custo: 32555 (Tempo: 0.92s)
+  - Pior Custo:   36674 (Tempo: 0.75s)
+  - Custo Medio:  34513
+  - Tempo Medio:  0.73s
+  - Gap para o Otimo: +28.19%
+----------------------------------------------------------
+
+[Iniciando] Cenario 2 - Parametros Base...
+  -> Teste 1/5 | Custo: 27833 | Tempo: 2.40s
+  -> Teste 2/5 | Custo: 27753 | Tempo: 1.90s
+  -> Teste 3/5 | Custo: 29070 | Tempo: 2.46s
+  -> Teste 4/5 | Custo: 28033 | Tempo: 2.09s
+  -> Teste 5/5 | Custo: 29535 | Tempo: 1.86s
+
+RESULTADOS: Cenario 2 - Parametros Base
+  - Parametros: Populacao=100, Inversao=0.3, Geracoes=300
+  - Melhor Custo: 27753 (Tempo: 1.90s)
+  - Pior Custo:   29535 (Tempo: 1.86s)
+  - Custo Medio:  28445
+  - Tempo Medio:  2.14s
+  - Gap para o Otimo: +9.29%
+----------------------------------------------------------
+
+[Iniciando] Cenario 3 - Alta Mutacao...
+  -> Teste 1/5 | Custo: 35906 | Tempo: 1.85s
+  -> Teste 2/5 | Custo: 38013 | Tempo: 1.82s
+  -> Teste 3/5 | Custo: 40968 | Tempo: 1.58s
+  -> Teste 4/5 | Custo: 38999 | Tempo: 1.66s
+  -> Teste 5/5 | Custo: 36530 | Tempo: 2.08s
+
+RESULTADOS: Cenario 3 - Alta Mutacao
+  - Parametros: Populacao=100, Inversao=0.8, Geracoes=300
+  - Melhor Custo: 35906 (Tempo: 1.85s)
+  - Pior Custo:   40968 (Tempo: 1.58s)
+  - Custo Medio:  38083
+  - Tempo Medio:  1.80s
+  - Gap para o Otimo: +41.39%
+----------------------------------------------------------
+
+[Iniciando] Cenario 4 - Populacao Extensa...
+  -> Teste 1/5 | Custo: 34938 | Tempo: 5.80s
+  -> Teste 2/5 | Custo: 33508 | Tempo: 4.97s
+  -> Teste 3/5 | Custo: 33704 | Tempo: 5.86s
+  -> Teste 4/5 | Custo: 30626 | Tempo: 6.23s
+  -> Teste 5/5 | Custo: 32121 | Tempo: 8.70s
+
+RESULTADOS: Cenario 4 - Populacao Extensa
+  - Parametros: Populacao=300, Inversao=0.3, Geracoes=300
+  - Melhor Custo: 30626 (Tempo: 6.23s)
+  - Pior Custo:   34938 (Tempo: 5.80s)
+  - Custo Medio:  32979
+  - Tempo Medio:  6.31s
+  - Gap para o Otimo: +20.60%
+----------------------------------------------------------
+
+===============================================================================================
+CENARIO                        | MELHOR  | PIOR    | MEDIA C. | T. MELHOR | T. PIOR  | T. MEDIA | GAP %
+-----------------------------------------------------------------------------------------------
+Cenario 1 - Execucao Rapida    | 32555   | 36674   | 34513    | 0.92    s | 0.75   s | 0.73   s | +28.19%
+Cenario 2 - Parametros Base    | 27753   | 29535   | 28445    | 1.90    s | 1.86   s | 2.14   s | +9.29%
+Cenario 3 - Alta Mutacao       | 35906   | 40968   | 38083    | 1.85    s | 1.58   s | 1.80   s | +41.39%
+Cenario 4 - Populacao Extensa  | 30626   | 34938   | 32979    | 6.23    s | 5.80   s | 6.31   s | +20.60%
+===============================================================================================
+
+SINTESE GERAL
+Melhor configuracao: Cenario 2 - Parametros Base
+Menor custo atingido: 27753 (Otimo global: 25395)
+
