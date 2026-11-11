@@ -4,8 +4,8 @@ import time
 
 from deap import base, creator, tools, algorithms
 
-from INV import inv
-from OX import ox
+from pisi2.brasil58.src.app.INV import inv
+from pisi2.brasil58.src.app.OX import ox
 
 QTDE_CIDADES = 58
 ARQUIVO_ARESTAS = os.path.join(
